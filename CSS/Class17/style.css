@@ -1,0 +1,92 @@
+/* table{
+    width: 100%;
+}
+
+table,th,td{
+    border-bottom: 1px solid #aca9a9;
+    border-collapse: collapse;
+    text-align: center;
+  
+}
+th,td{
+    padding: 5px;
+}
+
+tfoot{
+    background-color: mediumseagreen;
+}
+tr:nth-child(even) {
+    background-color: #e0dddd;
+    
+}
+div{
+    overflow-x: auto;
+} */
+/* span{
+    display: block;
+    border: 2px solid red;
+}
+p{
+    display: inline;
+    border: 2px solid green;
+}
+a{
+  visibility: hidden;
+    border: 2px solid dodgerblue;
+    height: 30px;
+} */
+/* div{
+    position: relative;
+    width: 100px;
+    height: 80px;
+    border: 2px solid red;
+    top:200px;
+} */
+/* div{
+    margin-bottom: 30px;
+}
+ul{
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+li{
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+} */
+/* .box{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border: 2px solid green;
+    background-color: green;
+}
+.sub-box{
+    position: absolute;
+    border: 2px solid red;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    right: 0;
+    bottom: 0;
+   left: 0;
+  top:0;
+  margin: auto;
+  background-color: red;
+} */
+#sticky{
+    border: 2px solid tomato;
+    color: mediumseagreen;
+    position: sticky;
+    top:0;
+}

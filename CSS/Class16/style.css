@@ -1,0 +1,71 @@
+/* .fas{
+    font-size: 25px;
+}
+.fa-user-plus{
+    color: dodgerblue;
+}
+.fa-user-circle{
+    color: blueviolet;
+}
+.bi-whatsapp{
+    color: mediumseagreen;
+    font-size: 25px;
+}
+.color{
+    color: cadetblue;
+} */
+/* a:link{
+    color:brown;
+}
+a:visited{
+    color: mediumseagreen;
+}
+a:hover{
+    background-color: tomato;
+    color:white;
+    text-decoration: none;
+}
+a:active{
+    color: lime;
+} */
+/* li{
+
+   list-style: none;
+   
+}
+li::before{
+    content: url(./images/list-style-marker.png);
+    display: inline-block;
+    color: red;
+    font-size: 5px;
+    /* background-image:;
+    height: 10px;
+    width:40px; */
+    /* background-repeat: no-repeat;
+    background-size: 10px; */
+/* ul{
+    background-color: burlywood;
+}
+li{
+    background-color: aquamarine;
+    color: blue;
+    margin: 5px;
+} */
+/* div{
+    background-color: black;
+    
+}
+li{
+    list-style-type: none;
+    display: inline-block;
+}
+li a{
+    text-decoration: none;
+    color: #fff;
+} */
+
+li{
+    list-style-image: url(./images/list-style-marker.png);
+    
+    
+}

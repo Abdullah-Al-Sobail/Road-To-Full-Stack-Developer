@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "test";
+    src: url(./Fonts/Madimi_One\,Merriweather/Merriweather/Merriweather-Regular.ttf);
+}
+h3{
+    color: #fff;
+    text-shadow: 2px 2px 3px black,0px 0px 3px blue,0px 0px 5px darkblue;
+    font-style: italic;
+    font-size: 32px;
+    font-family: test;
+}
+#h3{
+    font-style: oblique;
+}
+.color{
+    background-color: aqua;
+}
+p{
+    font-family: "test", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: mediumseagreen;
+    background-color: #f9f7f7;
+    
+    
+}
