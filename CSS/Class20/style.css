@@ -1,0 +1,53 @@
+/* p:first-child span{
+    color: red;
+} */
+/* q:lang(no1){
+    quotes: "/" "/";
+}
+input:checked{
+    accent-color: green;
+}
+option:disabled{
+    color:yellow;
+} */
+/* input:disabled{
+    background-color: bisque;
+} */
+/* p:empty{
+    height: 20px;
+    width: 150px;
+    background-color: red;
+}
+input:enabled{
+    border: 2px solid green;
+} */
+/* p:first-of-type{
+    color:red;
+} */
+/* input:focus{
+   background-color: rgb(168, 236, 198);
+} */
+/* input:in-range{
+    background-color: mediumaquamarine;
+}
+input:out-of-range{
+    background-color: rgb(238, 183, 183);
+}
+input:invalid{
+    color: red;
+} */
+/* p:last-child{
+    color: red;
+} */
+/* p:last-of-type{
+    color: red;
+} */
+/* p{
+    color: black;
+}
+:not(p){
+    color: red;
+} */
+p:nth-last-child(1){
+    color: red;
+}
