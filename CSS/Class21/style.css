@@ -1,0 +1,61 @@
+/* p:nth-of-type(2){
+    color: red;
+} */
+/* p:only-of-type{
+    color: red;
+
+} */
+/* p:only-child{
+    color: red;
+} */
+/* input:optional{
+    background-color: aquamarine;
+}
+input:required{
+    background-color: lightcoral;
+} */
+/* input:read-only{
+    background-color: azure;
+} */
+/* input:read-write{
+    background-color: lightgreen;
+} */
+/* input:valid{
+    background-color: burlywood;
+}
+:target{
+    color:red;
+    border: 2px solid green;
+
+} */
+/* p::first-line{
+    color: red;
+    font-style: italic;
+}
+p::first-letter{
+    font-size: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blue;
+}
+p::before{
+    content: "Start"/"1";
+}
+p::after{
+    content: "End";
+    color: blue;
+}
+li::marker{
+    color: red;
+    font-size: larger;
+}
+::selection{
+    color: #fff;
+    background-color: #000;
+} */
+/* span::first-line{
+    color: red;
+} */
+div{
+    background-color: rgba(142, 198, 198,0.2);
+   
+}
