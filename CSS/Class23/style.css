@@ -126,16 +126,16 @@ ul{
     margin: 0;
     padding: 0;
 }
-button{
+/* button{
     padding: 8px;
     background-color: mediumseagreen;
     color:#fff;
     border: none;
    
-}
+} */
 .dropdown{
     position: relative;
-    display: inline-block;
+
 }
 .dropdown-content{
     position: absolute;
