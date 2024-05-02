@@ -1,0 +1,63 @@
+/* [class|="top"]{
+    color: red;
+} */
+/* [class^="top"]{
+    color: green;
+
+} */
+/* [class$="top"]{
+    color: tomato;
+} */
+/* [class*="C"]{
+    color: mediumseagreen;
+} */
+/* input[type=text], select{
+    width: 100%;
+    padding: 10px 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius:5px;
+    box-sizing: border-box;
+}
+input[type=submit]{
+    width: 100%;
+    background-color: mediumseagreen;
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover{
+    background-color: rgb(50, 151, 95);
+}
+div.form{
+    background-color: #f2f2f2;
+    padding: 18px;
+    border-radius: 5px;
+}
+input[type=search]{
+    width: 100%;
+    padding: 5px 25px;
+    margin: 10px 0;
+    background-image: url(./images/search.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+
+}
+textarea{
+    width: 100%;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    resize: vertical;
+} */
+body{
+        counter-reset: content;
+}
+p::before{
+    counter-increment: content;
+    content: counter(content) ":";
+}
