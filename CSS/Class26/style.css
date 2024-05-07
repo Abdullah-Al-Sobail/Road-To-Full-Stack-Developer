@@ -1,0 +1,29 @@
+/* body{
+    counter-reset: section;
+}
+p::before{
+    counter-increment: section;
+    content: "Element" counter(section) ": ";
+} */
+/* body{
+    counter-reset: mainHeadings;
+}
+h3{
+    counter-reset: text;
+}
+h3::before{
+    counter-increment: mainHeadings;
+    content: "Main Section" counter(mainHeadings)  ": ";
+}
+p::before{
+    counter-increment: text;
+    content:counter(mainHeadings)"." counter(text)".";
+} */
+/* ol{
+    counter-reset: nastedList;
+    list-style-type: none;
+}
+li::before{
+    counter-increment: nastedList;
+    content: counters(nastedList,".")": ";
+} */
