@@ -1,0 +1,18 @@
+/* p{
+    color: red;
+}
+p.demo{
+    color: green;
+}
+p#demoID{
+    color: blue;
+} */
+/* *{
+    color: red;
+} */
+p{
+    color: aqua !important;
+}
+p.demo{
+    color: mediumseagreen !important;
+}
