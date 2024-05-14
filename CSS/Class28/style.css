@@ -1,0 +1,20 @@
+/* div.box{
+    height: 250px;
+    width: 250px;
+    border: 2px solid green;
+    border-radius: 25px 10px 40px 30px;
+
+} */
+div.box{
+    height: 250px;
+    padding: 20px;
+    /* border: 5px solid transparent;
+    border-image: url(./Image/images.jpg) 20 repeat;
+    border-image-outset: 5px; */
+    background-image: url(./Image/flower.png),url(./Image/paper.jpg);
+    background-size:100px,contain;
+    background-repeat: no-repeat;
+    background-position: right bottom,left;
+
+
+}
