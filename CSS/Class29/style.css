@@ -1,0 +1,23 @@
+/* .box{
+    height: 300px;
+    width: 300px;
+    border: 1px solid green;
+    background: url(./images/img_flwr.gif) no-repeat ;
+    background-size:contain;
+    background-position: center;
+} */
+
+.box{
+    height: 300px;
+    width: 300px;
+    padding: 20px;
+    background-color: crimson;
+    border: 2px dashed green;
+    background-clip: border-box;
+}
+p{
+    background-color: antiquewhite;
+}
+#p2{
+    background-color: inherit;
+}

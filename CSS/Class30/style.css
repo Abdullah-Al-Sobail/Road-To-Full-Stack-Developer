@@ -1,0 +1,8 @@
+/* .box{
+    height: 200px;
+    background-image: linear-gradient(to right,red 0px,red 10px,green 10px,green 20px,yellow 20px,yellow 50px,blue 50px);
+} */
+h3{
+    color: #f7f6f6;
+    text-shadow: 1px 1px 4px #000000, 0 0 25px blue,0 0 5px darkblue;
+}
