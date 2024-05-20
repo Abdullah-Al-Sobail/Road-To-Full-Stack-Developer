@@ -1,0 +1,26 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Oswald:wght@200..700&display=swap'); */
+/* @font-face {
+    font-family: myFont;
+    font-weight: 400;
+    font-style: normal;
+    src: url('./fonts/Bungee_Spice/BungeeSpice-Regular.ttf');
+} */
+
+.box1{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+    word-break:break-all;
+   /* font-family:  "Oswald", sans-serif; */
+    /* text-overflow:''; */
+    transform: translate(100px,50px)  ;
+    transition: width 5s, height 3s linear 2s;
+    
+   
+}
+.box1:hover{
+    width: 300px;
+    height: 300px;
+}
