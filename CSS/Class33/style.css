@@ -1,0 +1,33 @@
+/* img{
+    -webkit-box-reflect: right 50px;
+} */
+/* .maskImg{
+    -webkit-mask-image: url(./images/w3logo.png);
+    mask-image: url(./images/w3logo.png);
+    mask-repeat:no-repeat; 
+} */
+a{
+    text-decoration: none;
+    display: inline-block;
+   
+}
+.button{
+    width:80px;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+}
+.button2{
+    background-color: blue;
+}
+.button3{
+    background-color:#fff;
+    color: #000;
+    transition: 2s;
+}
+.button3:hover{
+    background-color: yellow;
+    color: red;
+}
