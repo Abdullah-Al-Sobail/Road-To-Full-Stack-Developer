@@ -1,0 +1,16 @@
+/* h3{
+    background-color: mediumseagreen;
+    color: tomato;
+} */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+div{
+    width: 24.9%;
+    background-color: azure;
+    float: left;
+    padding: 25px;
+    border: 0.5px solid #000;
+}

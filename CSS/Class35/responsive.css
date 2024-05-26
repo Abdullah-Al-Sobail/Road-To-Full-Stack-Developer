@@ -1,0 +1,23 @@
+/* @media screen and (max-width:480px) {
+    h3{
+        display: inline-block;
+        color: red;
+        background-color: yellow;
+    }    
+} */
+@media screen and (max-width:600px){
+  div{
+    width: 49.9%;
+    background-color: cadetblue;
+    color: azure;
+    border-color: red;
+}
+}
+@media screen and (max-width:480px){
+    div{
+        width: 100%;
+        background-color: mediumseagreen;
+        color: dodgerblue;
+        border-color: blue;
+    } 
+}
