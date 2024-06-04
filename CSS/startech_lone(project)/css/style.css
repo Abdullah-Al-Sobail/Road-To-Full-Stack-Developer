@@ -2,10 +2,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+ul li {
+  list-style-type: none;
 }
 body {
   font-size: 10px;
+  box-sizing: border-box;
+  background-color: #f2f4f8;
 }
 /*Header part start*/
 .container {
@@ -59,7 +63,7 @@ input[type="search"] {
 nav {
   text-align: center;
   color: #fff;
-  padding: 7px;
+
   box-shadow: 1px 1px 1.5px #a8afb4;
 }
 ul li,
@@ -69,6 +73,8 @@ a {
   color: #000;
   margin-left: 2px;
   font-weight: bold;
+  padding: 5px 0px;
+  line-height: 10px;
 }
 /*Nav Bar End Here*/
 
@@ -77,7 +83,9 @@ a {
 main {
   width: 70%;
   margin: auto;
-  border: 2px solid red;
+}
+.bannerSection {
+  margin-top: 20px;
 }
 .banner {
   width: 70%;
@@ -90,7 +98,8 @@ main {
   margin-left: 20px;
 }
 .searchProduct {
-  padding: 10px;
+  text-align: center;
+  padding: 20px;
   background-color: #ffe8a1;
   margin-bottom: 15px;
 }
@@ -99,4 +108,46 @@ main {
 }
 .sidebanner img {
   width: 100%;
+}
+.searchProduct input[type="search"] {
+  margin-bottom: 10px;
+  padding: 3px;
+}
+.searchProduct input[type="submit"] {
+  width: 100%;
+  padding: 2px;
+  background-color: transparent;
+  border: 2px solid #3749bb;
+  color: #3749bb;
+}
+.searchProduct input[type="submit"]:hover {
+  background-color: #3749bb;
+  color: #fff;
+  transition: 2s;
+}
+.searchProduct p {
+  margin-bottom: 15px;
+  color: #99c1d0;
+}
+.dropdown li,
+.dropdown li a {
+  display: block;
+  padding: 0;
+}
+.dropdownContainer {
+  position: relative;
+}
+.dropdown {
+  position: absolute;
+  background-color: #081621;
+  color: #fff;
+  padding: 10px;
+  width: 80px;
+  text-align: start;
+  top: 30px;
+  display: none;
+}
+.dropdownContainer:hover .dropdown {
+  display: block;
+  border-top: 2px solid #ee4a23;
 }
