@@ -7,32 +7,46 @@ ul li {
   list-style-type: none;
 }
 body {
-  font-size: 10px;
-  box-sizing: border-box;
+ box-sizing: border-box;
   background-color: #f2f4f8;
+  font-size: 20px;
+}
+section{
+  margin: 30px 0;
+}
+.secondary{
+  color:#444444;
+  font-size: 15px;
 }
 /*Header part start*/
 .container {
   display: flex;
   justify-content: center;
   background-color: #081621;
-  padding: 5px;
+  padding: 10px;
 }
 .right {
   display: flex;
   padding: 5px;
+  
 }
 .left {
   display: flex;
-  margin-top: 15px;
+  margin-top: 40px;
+  margin-left: 20px;
 }
 .search {
-  margin-top: 10px;
+  margin-top: 30px;
   margin-left: 20px;
-  width: 300px;
+  width: 600px;
 }
 input[type="search"] {
   width: 100%;
+  padding: 10px;
+}
+.text h5{
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 .box1 a {
@@ -40,9 +54,11 @@ input[type="search"] {
   display: flex;
   color: white;
   padding: 1.5px;
+  font-size: 20px;
+  
 }
 .icon {
-  margin: 5px;
+  margin:10px 15px 0 0;
   color: #ef4a23;
 }
 .box1 button {
@@ -56,7 +72,7 @@ input[type="search"] {
 }
 .text p {
   color: #a8afb4;
-  font-size: 8px;
+  font-size: 12px;
 }
 
 /*navigation Bar*/
@@ -66,8 +82,8 @@ nav {
 
   box-shadow: 1px 1px 1.5px #a8afb4;
 }
-ul li,
-a {
+ul li,a
+{
   text-decoration: none;
   display: inline-block;
   color: #000;
@@ -89,33 +105,39 @@ main {
 }
 .banner {
   width: 70%;
+ margin-right: 20px;
 }
 .banner img {
   width: 100%;
 }
 .productSearch {
-  width: 28%;
+  width: 25%;
   margin-left: 20px;
 }
 .searchProduct {
   text-align: center;
   padding: 20px;
   background-color: #ffe8a1;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  height: 50%;
 }
 .bannerSection {
   display: flex;
+}
+.sidebanner{
+  height: 35%;
 }
 .sidebanner img {
   width: 100%;
 }
 .searchProduct input[type="search"] {
   margin-bottom: 10px;
-  padding: 3px;
+  padding: 10px;
+  border: none;
 }
 .searchProduct input[type="submit"] {
   width: 100%;
-  padding: 2px;
+  padding: 10px;
   background-color: transparent;
   border: 2px solid #3749bb;
   color: #3749bb;
@@ -150,4 +172,32 @@ main {
 .dropdownContainer:hover .dropdown {
   display: block;
   border-top: 2px solid #ee4a23;
+}
+/*Short Search Section*/
+.shortSearch{
+ display: flex;
+ justify-content: space-between;
+}
+.shortSearch a{
+  text-decoration: none;
+  padding: 15px 60px 15px 15px;
+  background-color: #fff;
+  font-weight: normal;
+  line-height: normal;
+  border-radius: 5px;
+}
+.finder{
+  display: flex;
+}
+.laptopIcon{
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  display: block;
+  border-radius: 50%;
+  background-color: #ee4a23;
+  font-size: 30px;
+  color: #fff;
+  padding: 5px;
+  margin-right: 15px;
 }
