@@ -333,6 +333,43 @@ ul li,a
 .highlight:hover{
   text-decoration: underline;
 }
+.sideIcon{
+  display: inline-block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-right: 10px;
+ 
+}
+.sideIcon a{
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #081621;
+  color: #fff;
+  border-radius: 8px;
+  margin: 0px 10px 15px 0;
+  padding: 15px 10px;
+  border: 1px solid var(--secondary);
+  position: relative;
+  
+}
+.cornerDigit{
+  position: absolute;
+  top:-8px;
+  right: -8px;
+  padding: 5px;
+  background-color: var(--orange);
+  color: #fff;
+  border-radius: 50%;
+}
+.sideIcon a:hover{
+  background-color: #3749BB;
+}
+
+.sideIcon small{
+  font-size: 10px;
+}
 /* Footer Start */
 footer{
   background-color: #081621;
@@ -403,3 +440,56 @@ footer{
   color: var(--orange);
   text-decoration: underline;
 }
+.socialIconContainer{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.leftIcon{
+  display: flex;
+  justify-content: space-between;
+}
+.googlePlay a{
+  display: flex;
+  font-weight: normal;
+  line-height: normal;
+  border: 2px solid var(--secondary);
+  padding: 5px 20px 5px 8px;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.bi-google-play{
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.playStoreText p{
+  color: #fff;
+
+}
+.iconText{
+  margin-right: 10px;
+  padding: 10px 0;
+}
+.playStoreIcon{
+  padding: 10px 0;
+}
+.googlePlay a:hover{
+  border-color: #fff;
+}
+.socialMedia{
+  background-color:rgba(255,255,255,.1);
+  padding: 12px;
+  color: #fff;
+  border-radius: 50%;
+}
+.socialMedia:hover{
+  background-color: #3749BB;
+}
+.copyRight{
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+/*footer End*/
