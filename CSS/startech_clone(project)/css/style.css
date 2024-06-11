@@ -54,7 +54,23 @@ main,.midContent {
 }
 input[type="search"] {
   width: 100%;
+  border: none;
   padding: 10px;
+  
+}
+input[type="search"]:focus{
+  outline: none;
+}
+.search label{
+  position: relative;
+  background-color: transparent;
+  top: 8px;
+}
+.searchIconForm{
+  display: flex;
+  background-color: #fff;
+  padding: 7px;
+  border-radius: 3px;
 }
 .text h5{
   font-size: 20px;
@@ -91,7 +107,6 @@ input[type="search"] {
 nav {
   text-align: center;
   color: #fff;
-
   box-shadow: 1px 1px 1.5px #a8afb4;
 }
 ul li,a
@@ -103,6 +118,42 @@ ul li,a
   font-weight: bold;
   padding: 5px 0px;
   line-height: 10px;
+}
+.dropdown ul{
+  margin: 0;
+  padding: 0;
+}
+.dropdown li{
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.dropdown li a {
+  display: block;
+  padding: 5px;
+  font-weight: normal;
+  line-height: normal;
+}
+.dropdownContainer {
+  position: relative;
+  background-color: #fff;
+}
+.dropdown {
+  position: absolute;
+  background-color: #fff;
+  color: #fff;
+  min-width: 150px;
+  text-align: start;
+  top: 30px;
+  display: none;
+}
+.dropdownContainer:hover .dropdown {
+  display: block;
+  border-top: 2px solid #ee4a23;
+}
+.dropdown li a:hover{
+  background-color: var(--orange);
+  color: #fff;
 }
 /*Nav Bar End Here*/
 
@@ -130,6 +181,16 @@ ul li,a
   margin-bottom: 25px;
   height: 50%;
 }
+.sideSearchIcon{
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.sideSearchIcon label{
+  position: relative;
+  top: 8px;
+  right: 5px;
+}
 .sidebanner{
   height: 35%;
 }
@@ -138,7 +199,7 @@ ul li,a
 }
 .searchProduct input[type="search"] {
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 8px;
   border: none;
 }
 .searchProduct input[type="submit"] {
@@ -157,28 +218,7 @@ ul li,a
   margin-bottom: 15px;
   color: #99c1d0;
 }
-.dropdown li,
-.dropdown li a {
-  display: block;
-  padding: 0;
-}
-.dropdownContainer {
-  position: relative;
-}
-.dropdown {
-  position: absolute;
-  background-color: #081621;
-  color: #fff;
-  padding: 10px;
-  width: 80px;
-  text-align: start;
-  top: 30px;
-  display: none;
-}
-.dropdownContainer:hover .dropdown {
-  display: block;
-  border-top: 2px solid #ee4a23;
-}
+
 /*Short Search Section*/
 .shortSearchItem{
  display: flex;
