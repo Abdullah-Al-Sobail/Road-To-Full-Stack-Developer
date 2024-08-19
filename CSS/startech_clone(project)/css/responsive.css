@@ -1,0 +1,46 @@
+@media only screen and (max-width: 600px) {
+    header{
+        width: 100%;
+    }
+    .right .search,.left{
+        display: none;
+    }
+    section{
+        width: 100%;
+    }
+    main,
+    .midContent{
+        width: 100%;
+    }
+    .feature-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap:10px;
+      }
+      section.shortSearch{
+        width: 100%;
+    }
+    .laptopIcon{
+        text-align: center;
+        height: 40px;
+        width: 25px;
+        font-size: 25px;
+        padding: 2px;
+        margin-right: 3px;
+      }
+     
+    .shortSearch a{
+        padding: 5px 20px 5px 5px;
+    }
+    .productContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+      }
+      .footerContainer{
+        flex-direction: column;
+      
+      }
+
+}
