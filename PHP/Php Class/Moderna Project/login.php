@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(isset($_SESSION['isLogin'])){
+        header("Location:dashboard/dashboard.php");
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -25,10 +29,24 @@
         <?php
         }
         ?>
-        <form action="">
-            <input type="text" class="form-control" placeholder="Username or Email">
-            <input type="password" class="form-control my-2" placeholder="password">
-            <a href="" class="btn btn-primary w-100">LogIn</a>
+        <form action="./controller/loginUser.php" method="POST">
+            <input type="text" class="form-control" placeholder="Username or Email" name="email">
+            <span class="text-danger">
+                <?php
+                    if(isset($_SESSION['user_email_err'])){
+                        echo $_SESSION['user_email_err'];
+                    }
+                ?>
+            </span>
+            <input type="password" class="form-control my-2" placeholder="password" name="password">
+            <span class="text-danger">
+                <?php
+                    if(isset($_SESSION['user_password_err'])){
+                        echo $_SESSION['user_password_err'];
+                    }
+                ?>
+            </span>
+            <input type="submit" value="LogIn" class="btn btn-primary w-100" name="loginButton">
             <a href="./register.php" class="btn btn-sm btn-success w-100 my-2">Register</a>
         </form>
     </div>
@@ -37,5 +55,5 @@
 </body>
 </html>
 <?php
-   session_unset();
+   //session_unset();
 ?>

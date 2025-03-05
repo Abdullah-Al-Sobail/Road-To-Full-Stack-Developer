@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['isLogin'])){
+    header("Location:../login.php");
+  }
+  function baseUrl(){
+    return "http://".$_SERVER['SERVER_NAME']."/Road-To-Full-Stack-Developer/PHP/Php Class/Moderna Project/";
+  }
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="JS/color-modes.js"></script>
@@ -163,7 +172,7 @@
         </li>
       </ul>
     </div>
-
+  
     
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="calendar3" viewBox="0 0 16 16">
@@ -216,7 +225,8 @@
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Company name</a>
+  <img src="<?=baseUrl()."dashboard/uploads/".$_SESSION['auth']['profile_img']?>" alt="profile_image" style="height: 45px; width: 45px; border-radius: 50%; object-position: center; object-fit: cover;">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#"><?= $_SESSION['auth']['name'] ?></a>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
@@ -240,7 +250,7 @@
     <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
       <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
+          <h5 class="offcanvas-title" id="sidebarMenuLabel"></h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
@@ -274,7 +284,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="../controller/signOut.php">
                 <svg class="bi"><use xlink:href="#door-closed"/></svg>
                 Sign out
               </a>
