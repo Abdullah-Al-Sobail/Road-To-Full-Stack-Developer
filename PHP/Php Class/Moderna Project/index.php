@@ -1,6 +1,16 @@
 <?php
-  
   include_once 'inc/header.php';
+  include_once 'inc/env.php';
+
+  $query = "SELECT * FROM banners";
+  $select = mysqli_query($conn,$query);
+  $fetch = mysqli_fetch_all($select,1);
+  // echo '<pre>';
+  // print_r($fetch);
+  // echo '</pre>';
+  // exit();
+
+  
 ?>
 
   <main class="main">
@@ -13,30 +23,26 @@
       <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
         <div class="container position-relative">
-
+        <?php
+              foreach($fetch as $key=>$banners){?>
+                
           <div class="carousel-item active">
-            <div class="carousel-container">
-              <h2>Welcome to Moderna</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started">Read More</a>
-            </div>
-          </div><!-- End Carousel Item -->
+          <div class="carousel-container">
+          
+            <h2><?=$banners['banner_title']?></h2>
+            <p><?=$banners['banner_des']?></p>
+            <a href="<?=$banners['button_link']?>" class="btn-get-started"><?=$banners['button_text']?></a>
+          </div>
+        </div><!-- End Carousel Item -->
+                
+           <?php   
+           }
+            
+            ?>
 
-          <div class="carousel-item">
-            <div class="carousel-container">
-              <h2>Lorem Ipsum Dolor</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started">Read More</a>
-            </div>
-          </div><!-- End Carousel Item -->
 
-          <div class="carousel-item">
-            <div class="carousel-container">
-              <h2>Sequi ea ut et est quaerat</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started">Read More</a>
-            </div>
-          </div><!-- End Carousel Item -->
+
+          
 
           <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>

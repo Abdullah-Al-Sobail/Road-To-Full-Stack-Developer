@@ -30,10 +30,10 @@
             $_SESSION['name_err'] = "Please Enter a valid name";
             header('Location: ../register.php');   
         }elseif(!preg_match("/^[a-zA-Z-' ]*$/",$name)){
-         {
+         
             $_SESSION['name_err'] = "Only letters and white space allowed";
             header('Location: ../register.php'); 
-        }
+        
         }
 
         //contact validation

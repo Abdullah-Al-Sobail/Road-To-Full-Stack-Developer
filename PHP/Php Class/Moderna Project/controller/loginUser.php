@@ -26,7 +26,7 @@
           if($search_email->num_rows > 0){
          
             //password verify
-            $pass_querry = "SELECT name,email,password,profile_img FROM users WHERE email='$user_email' && password ='$enc_password'";
+            $pass_querry = "SELECT id,name,email,password,profile_img FROM users WHERE email='$user_email' && password ='$enc_password'";
             $passwordVerify = mysqli_query($conn,$pass_querry);
             $auth = mysqli_fetch_assoc($passwordVerify);
            //print_r($auth);
