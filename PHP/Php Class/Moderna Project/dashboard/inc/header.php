@@ -26,6 +26,11 @@
 
 <link href="./css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+
+
+
+
+
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -35,6 +40,18 @@
 <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#712cf9">
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    <link rel="stylesheet" href="./css/site.css">
+    <link rel="stylesheet" href="./JS/src/richtext.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./JS/src/jquery.richtext.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.content').richText();
+        });
+
+      </script>
 
     <style>
       .bd-placeholder-img {
@@ -122,6 +139,7 @@
     <link href="./css/dashboard.css" rel="stylesheet">
   </head>
   <body>
+  
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -276,11 +294,18 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#cart"/></svg>
-                Products
+              <a class="nav-link d-flex align-items-center gap-2" href="./add_feature.php">
+              <i class="bi bi-plus-circle"></i>
+                Add Feature
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="./all_features.php">
+              <i class="bi bi-list-columns-reverse"></i>
+                All Features
+              </a>
+            </li>
+          
            
           <hr class="my-3">
 
@@ -301,3 +326,4 @@
         </div>
       </div>
     </div>
+
