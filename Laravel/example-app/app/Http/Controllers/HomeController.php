@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function about(){
-        return view('about');
+        $name = "Laravel";
+        return view('about',['name'=>$name]);
     }
 }
