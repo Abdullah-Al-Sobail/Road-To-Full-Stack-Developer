@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Expr\Cast\String_;
 
 Route::get('/', function () {
-    return view('welcome');
+    $title = "welcome page";
+    return view('welcome',['title'=>$title]);
 });
 
 // Route::get('/home',function(){
