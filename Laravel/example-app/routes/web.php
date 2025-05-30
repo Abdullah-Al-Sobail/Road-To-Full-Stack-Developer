@@ -22,10 +22,14 @@ Route::get('/', function () {
 // })->whereNumber('id')->whereIn('text',['newpost','oldpost','currentpost']);
 //Route::view('/post','post');
 
-Route::get('/about-me/{id}',function(){
+Route::get('/about-me',function(){
     return view('layouts.about');
 })->name('about');
 Route::redirect('/about','/about-me');
+
+Route::get('/navbar',function(){
+    return view('layouts.navbar');
+});
 
 Route::fallback(function(){
     return "<h1>No pages found !</h1>";
