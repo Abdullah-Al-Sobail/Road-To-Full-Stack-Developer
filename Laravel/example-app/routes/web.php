@@ -30,6 +30,18 @@ Route::redirect('/about','/about-me');
 Route::get('/navbar',function(){
     return view('layouts.navbar');
 });
+Route::get('/services',function(){
+    return view('layouts.services');
+});
+
+Route::get('/masterLayout',function(){
+    return view()
+});
+
+
+
+
+
 
 Route::fallback(function(){
     return "<h1>No pages found !</h1>";

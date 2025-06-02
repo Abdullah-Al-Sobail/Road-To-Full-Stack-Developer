@@ -1,3 +1,4 @@
+@includeFirst(['layouts.navbar','layouts.about'])
 <h1>{{$title}}</h1>
 <a href="{{route('about','name')}}">About</a>
 {{"This is test output"}}

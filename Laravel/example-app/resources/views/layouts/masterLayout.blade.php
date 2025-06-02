@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{$title}}</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 <body>
@@ -44,7 +44,14 @@
     </div>
   </div>
 </nav>
-
+<div class="card col-md-6 mx-auto">
+    <div class="card-header">
+        Content Section
+    </div>
+    <div class="card-body">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat aliquid cum tempore sit maxime praesentium perspiciatis iste natus modi nesciunt! Eligendi non dolor ducimus. Neque earum delectus minus esse aliquid.
+    </div>
+</div>
 </body>
 </html>
 
