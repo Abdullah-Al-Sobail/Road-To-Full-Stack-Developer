@@ -2,6 +2,22 @@
 @section('title')
     Blog Page01
 @endsection
-@section('content')
-    Blogpage 01
+
+
+
+@section('card-header')
+    Header
 @endsection
+
+@section('sidebar')
+    @parent
+    <li>New item</li>
+@endsection
+@push('scripts')
+    <script src="script.js"></script>
+
+@endpush
+@prepend('scripts')
+    <script src="script1.js"></script>
+@endprepend
+

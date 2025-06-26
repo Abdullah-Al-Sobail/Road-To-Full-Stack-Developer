@@ -37,9 +37,7 @@ Route::get('/services',function(){
 Route::get('/masterLayout',function(){
     return view('layouts.master_layouts');
 });
-Route::get('/blogPage01',function(){
-    return view('layouts.blogPage01');
-});
+Route::get('/blogPage01',[HomeController::class,'blog']);
 Route::get('/blogPage02',function(){
     return view('layouts.blogPage02');
 });

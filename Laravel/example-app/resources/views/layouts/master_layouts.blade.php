@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
+    @stack('scripts')
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -44,14 +46,34 @@
     </div>
   </div>
 </nav>
-
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi amet eius distinctio deserunt et possimus vero vel dignissimos perferendis beatae officiis cum eum velit, quis numquam, ipsam dolorem temporibus mollitia!</p>
 <div class="card col-md-6 mx-auto mt-5">
+      @hasSection('card-header')
+        @yield('card-header')
+      @endif
+      {{-- {!! View::yieldContent('content','<h1>No Data found</h1>') !!} --}}
     <div class="card-body">
-       @yield('content')
+
+      {{-- @yield('content','<h1>No data found</h1>') --}}
+     @hasSection('content')
+      @yield('content')
+
+      @else
+       <h1>No Data Found</h1>
+     @endif
+
     </div>
 </div>
 
-
+@section('sidebar')
+    <ul>
+        <li>
+        <a href="/blogPage01">Page01</a>
+        <a href="/blogPage02">Page02</a>
+        <a href="/blogPage03">Page03</a>
+        </li>
+    </ul>
+@show
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
