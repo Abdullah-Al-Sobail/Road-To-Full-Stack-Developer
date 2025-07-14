@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Expr\Cast\String_;
 
@@ -44,6 +45,7 @@ Route::get('/blogPage02',function(){
 Route::get('/blogPage03',function(){
     return view('layouts.blogPage03');
 });
+Route::get('/invok',TestController::class);
 
 
 
