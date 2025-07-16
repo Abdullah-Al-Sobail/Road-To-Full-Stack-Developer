@@ -29,10 +29,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                   @auth()
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item"><a href="{{route('blog.post')}}" class="nav-link">Add Post</a></li>
                         <li class="nav-item"><a href="{{route('blog.allPost')}}" class="nav-link">All Post</a></li>
                     </ul>
+                   @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

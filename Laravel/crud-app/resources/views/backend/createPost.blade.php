@@ -4,9 +4,16 @@
     <div class="card col-md-6 mx-auto">
         <div class="card-header bg-primary text-white">Add New Post</div>
         <div class="card-body">
-            <form action="">
-                <input type="text" placeholder="Post Title" class="form-control my-2">
-                <textarea name=""  placeholder="Details" class="form-control my-2"></textarea>
+            <form action="{{route('blog.validate')}}" method="POST">
+                @csrf
+                <input type="text" name="title" placeholder="Post Title" class="form-control my-2" value="{{old('title')}}">
+                @error('title')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
+                <textarea name="detail"  placeholder="Details" class="form-control my-2"></textarea>
+                @error('detail')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 <input type="submit" value="Submit Post" class="btn btn-secondary w-100">
             </form>
         </div>
