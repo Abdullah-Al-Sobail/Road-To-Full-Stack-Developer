@@ -17,7 +17,9 @@ class BlogController extends Controller
     return view('backend.createPost');
    }
    public function allPost(){
-    return view('backend.allPost');
+    $blogPosts = Post::all();
+    // dd($blogPosts);
+    return view('backend.allPost',compact('blogPosts'));
    }
    public function validateData(Request $request ){
         // print_r($request->all());
@@ -46,6 +48,6 @@ class BlogController extends Controller
 
         $blogPost->save();
 
-        return redirect();
+        return back()->with('success','Post Inserted Successfully!');
    }
 }

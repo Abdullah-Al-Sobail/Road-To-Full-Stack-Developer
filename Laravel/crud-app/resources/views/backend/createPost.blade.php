@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="card col-md-6 mx-auto">
+        @if (session()->has('success'))
+        <span class="alert alert-success">{{session('success')}}</span>
+        @endif
+
+
         <div class="card-header bg-primary text-white">Add New Post</div>
         <div class="card-body">
             <form action="{{route('blog.validate')}}" method="POST">

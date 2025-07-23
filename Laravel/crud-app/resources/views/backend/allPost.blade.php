@@ -9,15 +9,21 @@
                 <th>Des</th>
                 <th>View</th>
                 <th>Created by</th>
+                <th>Status</th>
                 <th>Actions</th>
             </thead>
+
+
             <tbody>
+               @foreach ($blogPosts as $key=>$post)
+                {{-- {{dd($post)}} --}}
                 <tr>
-                    <td>01</td>
-                    <td>Post Title</td>
-                    <td>Post Details</td>
-                    <td>05</td>
-                    <td>Admin</td>
+                    <td>{{++$key}}</td>
+                    <td>{{$post->title}}</td>
+                    <td>{{$post->description}}</td>
+                    <td>{{$post->view}}</td>
+                    <td>{{$post->created_by}}</td>
+                    <td ><span class="badge {{$post->status== true ? 'bg-success':'bg-danger'}}">{{$post->status== true ? 'Active':'Deactive'}}</span></td>
                     <td>
                         <div class="btn-group">
                             <a href="" class="btn btn-warning">Edit</a>
@@ -27,6 +33,7 @@
                     </td>
 
                 </tr>
+               @endforeach
             </tbody>
         </table>
     </div>
