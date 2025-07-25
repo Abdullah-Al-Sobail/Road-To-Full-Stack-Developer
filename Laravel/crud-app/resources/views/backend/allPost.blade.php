@@ -15,7 +15,7 @@
 
 
             <tbody>
-               @foreach ($blogPosts as $key=>$post)
+               @forelse ($blogPosts as $key=>$post)
                 {{-- {{dd($post)}} --}}
                 <tr>
                     <td>{{++$key}}</td>
@@ -27,13 +27,19 @@
                     <td>
                         <div class="btn-group">
                             <a href="" class="btn btn-warning">Edit</a>
+                            <a href="{{route('blog.status',$post->id)}}" class="btn btn-info">Status</a>
                             <a href="" class="btn btn-danger">Delete</a>
 
                         </div>
                     </td>
 
                 </tr>
-               @endforeach
+                @empty
+                   <tr>
+                    <td colspan="7" class="text-center fw-bold"> No Record Found</td>
+                   </tr>
+
+               @endforelse
             </tbody>
         </table>
     </div>

@@ -17,3 +17,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/add-post',[BlogController::class,'store'])->name('blog.post');
 Route::get('/all-post',[BlogController::class,'allPost'])->name('blog.allPost');
 Route::POST('/add-post',[BlogController::class,'validateData'])->name('blog.validate');
+Route::get('/update-status/{id}',[BlogController::class,'updateStatus'])->name('blog.status');
