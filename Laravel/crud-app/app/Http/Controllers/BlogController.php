@@ -14,6 +14,13 @@ class BlogController extends Controller
         $this->middleware('auth');
     }
 
+    public function restore($blogPost,$request){
+        $blogPost->title = $request->title;
+        $blogPost->slug = Str::slug($request->title);
+        $blogPost->description = $request->detail;
+        $blogPost->save();
+    }
+
     public function store(){
     return view('backend.createPost');
    }
@@ -44,12 +51,10 @@ class BlogController extends Controller
         //     ]
         // );
         $blogPost = new Post;
-        $blogPost->title = $request->title;
-        $blogPost->slug = Str::slug($request->title);
-        $blogPost->description = $request->detail;
-        $blogPost->created_by = auth()->user()->name;
 
-        $blogPost->save();
+        $blogPost->created_by = auth()->user()->name;
+        $this->restore($blogPost,$request);
+
 
         return back()->with('success','Post Inserted Successfully!');
    }
@@ -65,4 +70,30 @@ class BlogController extends Controller
     $statusUpdate->save();
     return back();
    }
+
+   public function editBlog($id){
+    // var_dump($id);
+    $oldData = Post::find($id,['id','title','description']);
+
+    return view('backend.editBlog',compact('oldData'));
+   }
+
+   public function updateBlog(Request $request,$id){
+    // return 'Hello';
+    //Validate before update
+    $request->validate([
+        'title'=>'required|max:100|unique:posts,title,'.$id,
+        'detail'=>'required'
+    ]);
+    $blogPost = Post::find($id);
+    $this->restore($blogPost,$request);
+    return redirect()->route('blog.allPost');
+   }
+   public function destroy($id){
+    $post = Post::findOrFail($id);
+    $post->delete();
+    return back();
+   }
+
+
 }
