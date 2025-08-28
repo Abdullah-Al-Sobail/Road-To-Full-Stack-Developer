@@ -5,7 +5,7 @@ use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[FrontendController::class,'showData'])->name('frontend.landingPage');
-Route::get('/post-view/{id}',[FrontendController::class,'viewPost'])->name('frontend.viewPost');
+Route::get('/post-view/{post:slug}',[FrontendController::class,'viewPost'])->name('frontend.viewPost');
 
 Auth::routes();
 

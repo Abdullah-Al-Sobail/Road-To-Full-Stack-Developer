@@ -5,7 +5,7 @@
        @forelse ($posts as $post)
          <div class="card col-2 p-0  me-2">
             <div class="card-header d-flex justify-content-between">
-                <a href="{{route('frontend.viewPost',$post->id)}}">{{$post->title}}</a> <span class="badge text-bg-primary">{{$post->view}}</span>
+                <a href="{{route('frontend.viewPost',$post)}}">{{$post->title}}</a> <span class="badge text-bg-primary">{{$post->view}}</span>
             </div>
             <div class="card-body">
                {{$post->description}}
