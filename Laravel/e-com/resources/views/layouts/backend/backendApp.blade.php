@@ -45,9 +45,20 @@
       <ul class="dropdown-menu" style="">
 
         <li><a class="dropdown-item" href="{{route('brand.add')}}">Add Brand</a></li>
+
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="avn4c">
+       Category
+      </button>
+      <ul class="dropdown-menu" style="">
+
+        <li><a class="dropdown-item" href="{{ route('category.add') }}">Add Category</a></li>
         <li><a class="dropdown-item" href="#">Something else here</a></li>
       </ul>
     </div>
+
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="pages-profile.html">
