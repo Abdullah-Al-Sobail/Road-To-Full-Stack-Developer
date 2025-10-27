@@ -15,9 +15,7 @@ class BackendController extends Controller
         $this->middleware('auth');
     }
 
-    public function login(){
-        return view('layouts.backend.signin');
-    }
+ 
     /**STORE BRAND DATA AND VALIDATE DATA */
     public function store(Request $request){
 

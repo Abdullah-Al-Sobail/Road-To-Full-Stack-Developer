@@ -13,7 +13,28 @@
         <th>Action</th>
     </thead>
     <tbody>
-
+        @forelse ($categories as $key=>$category)
+            <tr>
+                <td>{{ ++$key }}</td>
+                <td>{{ $category->category_name }}</td>
+                <td>{{ $category->slug }}</td>
+                <td>
+                    <img src="{{ $category->category_image_url }}" alt="{{ $category->category_name }}"
+                        style="height:100px;width:100px;object-fit:cover;"
+                    >
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a href="" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="" class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="5" class="text-center">No data found</td>
+            </tr>
+        @endforelse
     </tbody>
 </table>
 
