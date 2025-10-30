@@ -19,18 +19,34 @@ class CategoryController extends Controller
     public function store(Request $request){
         $validationData = $request->validate([
             'categoryName'=> 'required',
-            'categoryImage'=> 'required|image|mimes:png,jpg,jpeg,gif'
+            'categoryImage'=> 'image|mimes:png,jpg,jpeg,gif'
         ]);
         // dd($request->all());
         $category = new Category();
-        $categoryImageName = "category-".$request->slug.".".$request->categoryImage->extension();
+
         // dd($categoryImageName);
-        $imagepath = $request->categoryImage->move(public_path('storage/categories'),$categoryImageName);
+
         $category->category_name = $request->categoryName;
         $category->slug = $request->slug;
-        $category->category_image = $categoryImageName;
-        $category->category_image_url = url('/storage/categories/'.$categoryImageName);
+        if($request->hasFile('categoryImage')){
+            $categoryImageName = "category-".$request->slug.".".$request->categoryImage->extension();
+            $imagepath = $request->categoryImage->move(public_path('storage/categories'),$categoryImageName);
+            $category->category_image = $categoryImageName;
+            $category->category_image_url = url('/storage/categories/'.$categoryImageName);
+        }
         $category->save();
         return back();
+    }
+
+    public function edit(Request $request,Category $editCategory){
+        $categories = Category::all();
+        return view('layouts.backend.category.add',compact('categories','editCategory'));
+    }
+
+    public function update(Request $request,Category $updateCategory){
+        $request->validate([
+            'categoryName'=>'required',
+            'slug'=>'required',
+        ]);
     }
 }

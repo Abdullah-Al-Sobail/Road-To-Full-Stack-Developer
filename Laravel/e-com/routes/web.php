@@ -22,3 +22,5 @@ Route::delete('/delete-brand/{brand:slug}',[BackendController::class,'deleteBran
 //catgory
 Route::get('/add-category',[CategoryController::class,'addCategory'])->name('category.add');
 Route::post('/store-category',[CategoryController::class,'store'])->name('category.store');
+Route::get('/edit-category/{editCategory:slug}',[CategoryController::class,'edit'])->name('category.edit');
+Route::put('/update-category/{updateCategory:slug}',[CategoryController::class,'update'])->name('category.update');
