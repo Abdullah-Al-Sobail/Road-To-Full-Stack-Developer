@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -44,9 +45,63 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request,Category $updateCategory){
+
         $request->validate([
             'categoryName'=>'required',
             'slug'=>'required',
         ]);
+
+         //*File exists or not
+         $path ="categories/".$updateCategory->category_image;
+
+        if(Storage::disk('public')->exists($path)){
+            if($request->hasFile('categoryImage')){
+            Storage::disk('public')->delete($path);
+        // dd($categoryImageName);
+            $updateCategory->category_name = $request->categoryName;
+            $updateCategory->slug = $request->slug;
+            $categoryImageName = "category-".$request->slug.".".$request->categoryImage->extension();
+            $imagepath = $request->categoryImage->move(public_path('storage/categories'),$categoryImageName);
+            $updateCategory->category_image = $categoryImageName;
+            $updateCategory->category_image_url = url('/storage/categories/'.$categoryImageName);
+            $updateCategory->save();
+            return redirect()->route('category.add');
+            }else{
+            $updateCategory->category_name = $request->categoryName;
+            $updateCategory->slug = $request->slug;
+            if($request->hasFile('categoryimage')){
+            $categoryImageName = "category-".$request->slug.".".$request->categoryImage->extension();
+            $imagepath = $request->categoryImage->move(public_path('storage/categories'),$categoryImageName);
+            $updateCategory->category_image = $categoryImageName;
+            $updateCategory->category_image_url = url('/storage/categories/'.$categoryImageName);
+            }
+            $updateCategory->save();
+            return back();
+            }
+
+        }
     }
+     public function delete(Category $deleteCategory){
+
+     $path ="categories/".$deleteCategory->category_image;
+     $isDelete = Storage::disk('public')->delete($path);
+     if($isDelete){
+        $deleteCategory->delete();
+       return redirect()->route('category.add');
+     }
+    }
+
+    //**
+    // Sub Category Start
+    // */
+
+    public function subCategory(){
+        $categories = Category::select('id','category_name')->get();
+        return view('layouts.backend.category.subCategory',compact('categories'));
+    }
+
+
+
+
+
 }

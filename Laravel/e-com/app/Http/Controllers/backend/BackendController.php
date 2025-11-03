@@ -15,7 +15,7 @@ class BackendController extends Controller
         $this->middleware('auth');
     }
 
- 
+
     /**STORE BRAND DATA AND VALIDATE DATA */
     public function store(Request $request){
 
@@ -57,9 +57,10 @@ class BackendController extends Controller
             'brandName' => 'required',
             'slug' => 'required'
         ]);
+       
         //*File exists or not
         $path ="images/".$brand->brand_image;
-        // echo $path;
+
         if(Storage::disk('public')->exists($path)){
             if($request->hasFile('brandImage')){
             Storage::disk('public')->delete($path);

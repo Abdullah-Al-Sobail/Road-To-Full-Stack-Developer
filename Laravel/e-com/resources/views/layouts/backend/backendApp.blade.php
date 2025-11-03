@@ -55,7 +55,7 @@
       <ul class="dropdown-menu" style="">
 
         <li><a class="dropdown-item" href="{{ route('category.add') }}">Add Category</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="{{ route('subCategory.add') }}">Add Sub Category</a></li>
       </ul>
     </div>
 

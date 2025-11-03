@@ -33,7 +33,13 @@
                 <td>
                     <div class="btn-group">
                         <a href="{{ route('category.edit',$category->slug) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="#" onclick="event.preventDefault();
+                                                     document.getElementById('delete-form').submit();"
+                                     class="btn btn-danger btn-sm" >Delete</a>
+                  <form id="delete-form" action="{{route('category.delete',$category->slug)}}" method="POST" class="d-none">
+                                        @csrf
+                                        @method('delete')
+                  </form>
                     </div>
                 </td>
             </tr>
@@ -79,7 +85,7 @@
             <h3>Edit Category</h3>
             </div>
          <div class="card-body rounded-2">
-             <form action="{{ route('category.update',$category->slug) }}" method="POST" enctype="multipart/form-data">
+             <form action="{{ route('category.update',$editCategory->slug) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
         <input type="text" placeholder="Category Name" class="form-control mb-2" name="categoryName" id="mainCategory" value="{{$editCategory->category_name}}">

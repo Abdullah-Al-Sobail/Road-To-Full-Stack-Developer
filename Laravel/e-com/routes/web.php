@@ -24,3 +24,8 @@ Route::get('/add-category',[CategoryController::class,'addCategory'])->name('cat
 Route::post('/store-category',[CategoryController::class,'store'])->name('category.store');
 Route::get('/edit-category/{editCategory:slug}',[CategoryController::class,'edit'])->name('category.edit');
 Route::put('/update-category/{updateCategory:slug}',[CategoryController::class,'update'])->name('category.update');
+Route::delete('/delete-category/{deleteCategory:slug}',[CategoryController::class,'delete'])->name('category.delete');
+
+
+//Sub Category
+Route::get('sub-category',[CategoryController::class,'subCategory'])->name('subCategory.add');
