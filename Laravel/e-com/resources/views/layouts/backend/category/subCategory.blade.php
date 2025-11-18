@@ -1,6 +1,7 @@
 @extends('layouts.backend.backendApp')
 @section('backendContent')
     <h2 class="text-primary">Sub Category Management</h2>
+
      <div class="d-flex">
 
         <div class="col-md-7 me-2">
@@ -14,7 +15,16 @@
         <th>Action</th>
     </thead>
     <tbody>
-
+        @foreach ($subCategories as $key=>$subCategory)
+            <tr>
+                <td>{{ ++$key }}</td>
+                <td>{{ 11 }}</td>
+                <td>{{ $subCategory->sub_category_name }}</td>
+                <td>{{ $subCategory->slug }}</td>
+                <td><img src="{{ $subCategory->image_url }}" alt="{{ $subCategory->slug }}" height="80px" width="80px" style="object-fit: cover"></td>
+                <td>Action</td>
+            </tr>
+        @endforeach
     </tbody>
 </table>
 
@@ -29,22 +39,22 @@
             <h3>Add New Sub Category</h3>
             </div>
          <div class="card-body rounded-2">
-             <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+             <form action="{{ route('subCategory.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-        <input type="text" placeholder="Category Name" class="form-control mb-2" name="categoryName" id="mainCategory">
-        @error('categoryName')
+        <input type="text" placeholder="Sub Category Name" class="form-control mb-2" name="subCategoryName" id="mainCategory">
+        @error('subCategoryName')
               <span class="text-danger"> {{ $message}}</span>
         @enderror
         <input type="text" placeholder="Slug" class="form-control mb-2" name="slug" id="slug">
-        <select name="parent_category" id="" class="form-select my-2">
+        <select name="parent_category" class="form-select my-2">
             <option value="" disabled selected>Select a category</option>
             @foreach ($categories as $category)
-            <option value="">{{ $category->category_name }}</option>
+            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
             @endforeach
         </select>
-        <label for="">Category Image</label>
-        <input type="file" placeholder="Category Name" class="form-control mb-2" name="categoryImage">
-        @error('categoryImage')
+        <label for="">Sub Category Image</label>
+        <input type="file" placeholder="Category Name" class="form-control mb-2" name="subCategoryImage">
+        @error('subCategoryImage')
               <span class="text-danger"> {{ $message}}</span>
         @enderror
         <button type="submit" class="btn btn-primary w-100">Upload Sub Category</button>

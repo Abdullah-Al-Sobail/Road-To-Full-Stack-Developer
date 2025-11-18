@@ -28,4 +28,6 @@ Route::delete('/delete-category/{deleteCategory:slug}',[CategoryController::clas
 
 
 //Sub Category
-Route::get('sub-category',[CategoryController::class,'subCategory'])->name('subCategory.add');
+Route::get('add-sub-category',[CategoryController::class,'subCategory'])->name('subCategory.view');
+
+Route::post('store-sub-category',[CategoryController::class,'subCategoryStore'])->name('subCategory.store');

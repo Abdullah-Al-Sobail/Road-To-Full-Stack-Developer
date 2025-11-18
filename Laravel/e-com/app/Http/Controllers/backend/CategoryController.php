@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -14,7 +15,7 @@ class CategoryController extends Controller
         $this->middleware('auth');
     }
     public function addCategory(){
-        $categories = Category::all();
+         $categories = Category::all();
         return view('layouts.backend.category.add',compact('categories'));
     }
     public function store(Request $request){
@@ -95,9 +96,35 @@ class CategoryController extends Controller
     // Sub Category Start
     // */
 
-    public function subCategory(){
+    public function mainCategory(){
         $categories = Category::select('id','category_name')->get();
         return view('layouts.backend.category.subCategory',compact('categories'));
+    }
+    public function subCategoryStore(Request $request){
+        $request->validate([
+            'subCategoryName'=> 'required',
+            'slug'=>'required'
+        ]);
+
+        $subCategories = new SubCategory();
+        $subCategories->sub_category_name = $request->subCategoryName;
+        $subCategories->slug = $request->slug;
+        $subCategories->category = $request->parent_category;
+        $subCategories->category_id = $request->parent_category;
+        if($request->hasFile('subCategoryImage')){
+            $subCategoryImageName = "subCategory-".$request->slug.".".$request->subCategoryImage->extension();
+            $imagepath = $request->subCategoryImage->move(public_path('storage/categories'),$subCategoryImageName);
+            $subCategories->image_name = $subCategoryImageName;
+            $subCategories->image_url = url('/storage/categories/'.$subCategoryImageName);
+        }
+        $subCategories->save();
+        return back();
+
+    }
+    public function subCategory(){
+        $categories = Category::all();
+        $subCategories = SubCategory::select('id','sub_category_name','slug','image_url')->get();
+        return view('layouts.backend.category.subCategory',compact('categories','subCategories'));
     }
 
 
