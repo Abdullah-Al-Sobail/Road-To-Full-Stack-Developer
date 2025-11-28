@@ -29,5 +29,5 @@ Route::delete('/delete-category/{deleteCategory:slug}',[CategoryController::clas
 
 //Sub Category
 Route::get('add-sub-category',[CategoryController::class,'subCategory'])->name('subCategory.view');
-
 Route::post('store-sub-category',[CategoryController::class,'subCategoryStore'])->name('subCategory.store');
+Route::get('edit-sub-category/{editSubCategory:slug}',[CategoryController::class,'editSubCategory'])->name('subCategory.edit');

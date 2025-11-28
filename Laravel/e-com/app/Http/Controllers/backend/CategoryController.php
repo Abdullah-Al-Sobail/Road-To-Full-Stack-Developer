@@ -77,7 +77,7 @@ class CategoryController extends Controller
             $updateCategory->category_image_url = url('/storage/categories/'.$categoryImageName);
             }
             $updateCategory->save();
-            return back();
+            return redirect()->route('category.add');
             }
 
         }
@@ -90,6 +90,7 @@ class CategoryController extends Controller
         $deleteCategory->delete();
        return redirect()->route('category.add');
      }
+     return redirect()->route('category.add');
     }
 
     //**
@@ -125,6 +126,18 @@ class CategoryController extends Controller
         $categories = Category::all();
         $subCategories = SubCategory::select('id','sub_category_name','slug','image_url')->get();
         return view('layouts.backend.category.subCategory',compact('categories','subCategories'));
+    }
+
+    public function editSubCategory(Request $request,SubCategory $editSubCategory){
+        //  $request->validate([
+        //     'subCategoryName'=> 'required',
+        //     'slug'=>'required'
+        // ]);
+
+        $categories = Category::all();
+        dd( $editSubCategory);
+        $subCategories = SubCategory::with('category')->select('id','sub_category_name','slug','image_url')->get();
+        return view('layouts.backend.category.subCategory',compact('categories','subCategories','editSubCategory'));
     }
 
 
