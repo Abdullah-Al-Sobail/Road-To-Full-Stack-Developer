@@ -135,8 +135,9 @@ class CategoryController extends Controller
         // ]);
 
         $categories = Category::all();
-        dd( $editSubCategory);
-        $subCategories = SubCategory::with('category')->select('id','sub_category_name','slug','image_url')->get();
+
+        $subCategories = SubCategory::select('id','sub_category_name','slug','image_url')->get();
+        // dd( $subCategories);
         return view('layouts.backend.category.subCategory',compact('categories','subCategories','editSubCategory'));
     }
 

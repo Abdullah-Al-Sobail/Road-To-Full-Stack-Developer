@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\backend\BackendController;
-use App\Http\Controllers\backend\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\BackendController;
+use App\Http\Controllers\backend\ProductController;
+use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\frontend\FrontendController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,3 +33,10 @@ Route::delete('/delete-category/{deleteCategory:slug}',[CategoryController::clas
 Route::get('add-sub-category',[CategoryController::class,'subCategory'])->name('subCategory.view');
 Route::post('store-sub-category',[CategoryController::class,'subCategoryStore'])->name('subCategory.store');
 Route::get('edit-sub-category/{editSubCategory:slug}',[CategoryController::class,'editSubCategory'])->name('subCategory.edit');
+
+
+//Front-end
+Route::get('/home-page',[FrontendController::class,'homepage'])->name('homepage');
+
+//Product
+Route::get('add-prodcut',[ProductController::class,'product'])->name('product.add');

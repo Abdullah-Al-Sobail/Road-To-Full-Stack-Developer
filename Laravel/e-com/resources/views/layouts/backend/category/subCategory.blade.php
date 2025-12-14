@@ -43,7 +43,7 @@
 </table>
 
 </div>
-  {{--   --}}
+
 <div class="col-md-4">
 
          @if (!isset($editSubCategory))
@@ -83,15 +83,15 @@
          <div class="card-body rounded-2">
              <form action="" method="POST" enctype="multipart/form-data">
                 @csrf
-        <input type="text" placeholder="Sub Category Name" class="form-control mb-2" name="subCategoryName" id="mainCategory">
+        <input type="text" placeholder="Sub Category Name" class="form-control mb-2" name="subCategoryName" id="mainCategory" value="{{ $editSubCategory->sub_category_name }}">
         @error('subCategoryName')
               <span class="text-danger"> {{ $message}}</span>
         @enderror
-        <input type="text" placeholder="Slug" class="form-control mb-2" name="slug" id="slug">
+        <input type="text" placeholder="Slug" class="form-control mb-2" name="slug" id="slug" value="{{ $editSubCategory->slug }}">
         <select name="parent_category" class="form-select my-2">
-            <option value="" disabled selected>Select a category</option>
+
             @foreach ($categories as $category)
-            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+            <option value="{{ $category->id }}" @selected(old('parent_category',$editSubCategory->category_id==$category->id))>{{ $category->category_name }}</option>
             @endforeach
         </select>
         <label for="">Sub Category Image</label>
@@ -104,7 +104,6 @@
          </div>
         </div>
          @endif
-
 
 
 

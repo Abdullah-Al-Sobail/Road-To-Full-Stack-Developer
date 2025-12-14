@@ -58,6 +58,17 @@
         <li><a class="dropdown-item" href="{{ route('subCategory.view') }}">Add Sub Category</a></li>
       </ul>
     </div>
+      <div class="dropdown">
+      <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="avn4c">
+       Products
+      </button>
+      <ul class="dropdown-menu" style="">
+
+        <li><a class="dropdown-item" href="{{route('product.add')}}">Add Product</a></li>
+        <li><a class="dropdown-item" href="">All Product</a></li>
+      </ul>
+    </div>
+
 
 
 					<li class="sidebar-item">
