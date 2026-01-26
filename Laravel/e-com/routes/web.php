@@ -9,7 +9,7 @@ use App\Http\Controllers\frontend\FrontendController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/home-page',[FrontendController::class,'homepage'])->name('frontend.homePage');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -40,3 +40,5 @@ Route::get('/home-page',[FrontendController::class,'homepage'])->name('homepage'
 
 //Product
 Route::get('add-prodcut',[ProductController::class,'product'])->name('product.add');
+Route::get('fetch-sub-category/{id}',[ProductController::class,'fetchSubCategory'])->name('fetch.subCategory');
+Route::POST('store-product',[ProductController::class,'store'])->name('product.store');
