@@ -11,9 +11,9 @@ class FrontendController extends Controller
 {
     public function homepage(){
         $categories = Category::with('subCategory','product')->get();
-        // $products  = Product::paginate(2);
+        $products  = Product::simplePaginate(3);
         // dd( $products );
     // dd($categories);
-        return view('layouts.frontend.products',compact('categories'));
+        return view('layouts.frontend.products',compact('categories','products'));
     }
 }

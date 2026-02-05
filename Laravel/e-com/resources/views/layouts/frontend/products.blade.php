@@ -21,5 +21,38 @@
                @endforeach
             </div>
         </section>
+
+
     @endforeach
+        <section>
+            <h1>Random</h1>
+            <div class="row">
+                 @foreach ($products as $product)
+                    <div class="col-lg-4">
+                 <div class="card h-100" style="width: 18rem;">
+
+  <img class="card-img-top" src="{{ $product->product_image_url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">
+        {{ $product->title }}
+        @if ($product->discount)
+             <div class="overlay" style="position:absolute;height:40px;width:40px;background:dodgerblue;top:-10px;left:-20px;border-radius:50%; text-align: center;color:aliceblue; font-size: 18px;font-weight:normal">{{ intval(($product->discount/$product->price)*100) }}%</div>
+        <span class="float-end fs-6 ms-1 text-decoration-line-through">&#2547;{{ $product->price }}</span>
+        <span class="float-end fs-6">&#2547;{{ $product->discount }}</span>
+        @else
+        <span class="float-end fs-6 ms-1">&#2547;{{ $product->price }}</span>
+        @endif
+
+    </h5>
+    <p class="card-text">{{ $product->short_description }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+               </div>
+                 @endforeach
+            </div>
+            {{ $products->links() }}
+        </section>
+
+
 @endsection
