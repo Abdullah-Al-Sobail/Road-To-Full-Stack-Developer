@@ -25,4 +25,6 @@ class HomeController extends Controller
     {
         return view('layouts.backend.backendApp');
     }
+
+  
 }

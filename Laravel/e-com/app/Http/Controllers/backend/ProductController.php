@@ -14,8 +14,11 @@ class ProductController extends Controller
 {
     public function product(){
         $brands = Brand::select('id','brand_name')->get();
-        $categories = Category::select('id','category_name')->get();
+        // $categories = ;
         return view('layouts.backend.product.addProduct',compact('brands','categories'));
+    }
+      public function viewProduct($slug){
+        return view('layouts.frontend.productView');
     }
     public function fetchSubCategory($id){
        $subCategories = SubCategory::where('category_id',$id)->select('id','sub_category_name')->get();

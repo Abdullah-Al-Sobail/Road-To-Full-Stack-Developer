@@ -1,10 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\BackendController;
-use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\frontend\FrontendController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,3 +44,4 @@ Route::get('/home-page',[FrontendController::class,'homepage'])->name('homepage'
 Route::get('add-prodcut',[ProductController::class,'product'])->name('product.add');
 Route::get('fetch-sub-category/{id}',[ProductController::class,'fetchSubCategory'])->name('fetch.subCategory');
 Route::POST('store-product',[ProductController::class,'store'])->name('product.store');
+Route::get('/{slug}',[ProductController::class,'viewProduct'])->name('product.view');
